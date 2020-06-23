@@ -48,12 +48,12 @@
     YT['fare_amount'].describe()
     YT['valid'] = YT['fare_amount'] > 0
     YT = YT[YT.valid == True]
-    YT['valid'] = YT['fare_amount'] <10000
+    YT['valid'] = YT['fare_amount'] <1000
     YT = YT[YT.valid == True]
     YT['fare_amount'].describe()
     
     #Provide Descriptive Data
-    YT.describe().apply("{0:.2f}".format)
+    YT.describe()
 
     # Saving the altered data set
     YT.to_csv('YT_curated.csv', index = False)
